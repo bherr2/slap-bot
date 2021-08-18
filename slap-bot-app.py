@@ -17,44 +17,17 @@ app = App(
     token=os.environ.get("SLACK_BOT_TOKEN")
 )
 
+def do_slap():
+    if board:
+        rainbow(board)
+        playZeldaChest(board)
+
 @app.command(SLAP_COMMAND)
 def handle_some_command(ack, body, logger):
-    ack()
+    ack(f"Hi <@{body['user_name']}>, I'll slap him for you!")
     print(f"<@{body['user_name']}> slapped you!")
-    
     logger.info(body)
-
-    rainbow(board)
-    playZeldaChest(board)
-
-# Listens to incoming messages that contain "hello"
-# To learn available listener method arguments,
-# visit https://slack.dev/bolt-python/api-docs/slack_bolt/kwargs_injection/args.html
-@app.message("hello")
-def message_hello(message, say):
-    # say() sends a message to the channel where the event was triggered
-    say(
-        blocks=[
-            {
-                "type": "section",
-                "text": {"type": "mrkdwn", "text": f"Hey there <@{message['user']}>!"},
-                "accessory": {
-                    "type": "button",
-                    "text": {"type": "plain_text", "text": "Click Me"},
-                    "action_id": "button_click",
-                },
-            }
-        ],
-        text=f"Hey there <@{message['user']}>!",
-    )
-
-
-@app.action("button_click")
-def action_button_click(body, ack, say):
-    # Acknowledge the action
-    ack()
-    say(f"<@{body['user']['id']}> clicked the button")
-
+    do_slap()
 
 @atexit.register
 def closeboard():
