@@ -6,7 +6,7 @@ def handle_notification(app_name, title, body):
     print("App Name: ", app_name)
     print("Notification title: ", title)
     print(body)
-    print("\n============\n")
+    print("\n============")
 
 def notifications(callback):
     def handler(asd, aasd):
