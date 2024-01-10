@@ -3,8 +3,8 @@ from winsdk.windows.ui.notifications import KnownNotificationBindings
 
 def handle_notification(app_name, title, body):
     print("\n============\n")
-    print("App Name: ", app_name)
-    print("Notification title: ", title)
+    print("App Name:", app_name)
+    print("Notification title:", title)
     print(body)
     print("\n============")
 

@@ -5,8 +5,8 @@ from notifications import notifications
 
 def notification_listener(app_name, title, body):
     print("\n============\n")
-    print("App Name: ", app_name)
-    print("Notification title: ", title)
+    print("App Name:", app_name)
+    print("Notification title:", title)
     print(body)
     print("\n============")
 
