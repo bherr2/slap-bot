@@ -11,6 +11,11 @@ def playSong(board, tones, delayMillis):
 def delay(duration):
   time.sleep(duration / 1000.)
 
+def playNotificationSong(board):
+  correctSongArray = [D5, F5, A5, C6, D6]
+  correctSongDelay = [200, 200, 200, 200, 200]
+  playSong(board, correctSongArray, correctSongDelay)
+
 def playCorrectSong(board):
   correctSongArray = [D5, F5, A5, C6, D6]
   correctSongDelay = [325, 325, 325, 325, 325]
