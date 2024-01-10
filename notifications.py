@@ -23,7 +23,7 @@ def notifications(callback):
             while True:
                 next(it, None)
                 if it.has_current:
-                    body += it.current.text
+                    body.append(it.current.text)
                 else:
                     break
 
