@@ -15,4 +15,5 @@ def notification_listener(app_name, title, body):
 
 
 if __name__ == "__main__":
+    run(['python', 'win-slapper-say-hi.py'])
     notifications(notification_listener)
